@@ -1,5 +1,5 @@
 
-import Circle from './circle'
+import Circle from '../components/Circle'
 import { useNavigate } from "react-router-dom";
 
 const Appbar = ({text}) => {
