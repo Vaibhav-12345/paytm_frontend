@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router-dom'
-import Circle from './circle'
+import { useNavigate } from "react-router-dom";
+import Circle from "../components/Circle";
 
-const Displaydata = ({ user }) => {
-  const navigate = useNavigate();
 
+const Displaydata = ({user}) => {
+
+   const navigate = useNavigate();
   function sendmoney() {
     navigate(`/send?id=${user._id}&name=${user.username}`);
   }
@@ -22,7 +23,7 @@ const Displaydata = ({ user }) => {
         Send money
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Displaydata;
+export default Displaydata
