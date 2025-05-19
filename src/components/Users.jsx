@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import DisplayData from "../components/Displaydata";
 import axios from "axios";
-
+import { BACKEND_URL } from "../config";
 const Users = () => {
 
   const [allUsers, setAllUsers] = useState([]);
@@ -16,7 +16,7 @@ const Users = () => {
   async function getAllUsers() {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/v1/user/bulk",
+        `${BACKEND_URL}api/v1/user/bulk`,
         {
           headers: {
             token: localStorage.getItem("token"),
