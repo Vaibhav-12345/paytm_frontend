@@ -3,6 +3,7 @@ import Appbar from '../components/Appbar'
 import Balance from '../components/Balance'
 import axios from 'axios'
 import Users from '../components/Users'
+import { BACKEND_URL } from '../config'
 const Dashboard = () => {
 
   const [balance, setbalance] = useState(0)
@@ -10,7 +11,7 @@ const Dashboard = () => {
   useEffect(()=>{
 
 async function getAllUser() {
-const response=await axios.get('http://localhost:3001/api/v1/account/balance',{
+const response=await axios.get(`${BACKEND_URL}api/v1/account/balance`,{
   headers:{
     token:localStorage.getItem('token')
   }

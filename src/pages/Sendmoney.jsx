@@ -10,7 +10,7 @@ import axios from 'axios'
 
   import { ToastContainer, toast } from 'react-toastify';
 
-
+import { BACKEND_URL } from '../config'
 
 const Sendmoney = () => {
   const [amount, setamount] = useState('')
@@ -24,7 +24,7 @@ const Sendmoney = () => {
    const navigate=useNavigate()
 
    async function Tansfermonery() {
-    await axios.post('http://localhost:3001/api/v1/account/transfer', {
+    await axios.post(`${BACKEND_URL}api/v1/account/transfer`, {
       to:to[0],
       amount:Number(amount)
     },{

@@ -8,6 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import { BACKEND_URL } from "../config";
 const Signup = () => {
   const [firstName, setfirstName] = useState("");
 
@@ -21,7 +22,7 @@ const Signup = () => {
 
   async function signupHandeler(){
     
-    await axios.post('http://localhost:3001/api/v1/user/signup',{
+    await axios.post(`${BACKEND_URL}api/v1/user/signup`,{
       username:username,
       password:password,
       firstName:firstName,

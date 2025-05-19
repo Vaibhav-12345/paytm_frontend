@@ -5,6 +5,7 @@ import Input from '../components/Input'
 import Button from '../components/Button'
 import Footersubheading from '../components/Footersubheading'
 import { useNavigate } from 'react-router-dom'
+import { BACKEND_URL } from '../config'
 
 import axios from 'axios'
 
@@ -16,7 +17,7 @@ const Signin = () => {
 
 
   async function signinHandeler() {
-    const response=await axios.post('http://localhost:3001/api/v1/user/signin',{
+    const response=await axios.post(`${BACKEND_URL}api/v1/user/signin`,{
       username:username,
       password:password
     }
